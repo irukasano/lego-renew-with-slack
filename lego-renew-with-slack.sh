@@ -102,7 +102,7 @@ if [ $EXITVALUE -ne 0 ]; then
   #logger -t letsencrypt "ALERT [$DOMAINS] exited abnormally with [$EXITVALUE]"
   slack_notify "failure" ":x: Failed to renew SSL certificate for [$DOMAINS]" "${OUTPUT}"
 else
-  echo "$OUTPUT" | grep -Eq "renewal is not needed|0 certificates renewed"
+  echo "$OUTPUT" | grep -Eq "renewal is not needed|no renewal|0 certificates renewed"
   if [ $? -eq 0 ]; then
     # No renewal needed
     :
