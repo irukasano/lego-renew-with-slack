@@ -19,7 +19,7 @@ It supports sending status notifications to Slack with visual indicators and cer
 ## Usage
 
 ```bash
-sudo /usr/local/bin/lego-renew-with-slack.sh \
+sudo /usr/local/bin/lego-renew-with-slack \
   --domains "example.com" \
   --http.webroot "/var/www/example.com/public"
 ```
@@ -70,7 +70,7 @@ If .env is not found, the script will fall back to default settings:
 
 * LEGO_BIN=/root/go/bin/lego
 * LEGO_PATH=/etc/lego
-* RENEW_HOOK=/sbin/service httpd restart
+* RENEW_HOOK=systemctl restart httpd
 
 ## Cron Setup
 
